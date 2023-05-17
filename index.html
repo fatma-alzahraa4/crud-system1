@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2 class="fw-bold fs-1 text-center text-success">PRODUCT</h2>
+        <label for="productNameInput">Product Name :</label>
+        <input type="text" class="form-control mb-3" oninput="validateProductName()" id="productNameInput">
+        <div class="alert alert-danger d-none" id="warningName"></div>
+
+
+        <label for="productPriceInput">Product Price :</label>
+        <input type="text" class="form-control mb-3" oninput="validateProductPrice()" id="productPriceInput">
+        <div class="alert alert-danger d-none" id="warningPrice"></div>
+
+
+        <label for="productCategoryInput">Product Category :</label>
+        <!-- <input type="text" class="form-control mb-3" id="productCategoryInput"> -->
+        <select class="form-select mb-3" name="category" id="productCategoryInput">
+            <option selected value="mobile">mobile</option>
+            <option value="tv">tv</option>
+            <option value="ipad">ipad</option>
+
+        </select>
+        
+        <label for="productDescInput">Product Description :</label>
+        <textarea type="text" class="form-control mb-3" id="productDescInput"></textarea>
+        <button onclick="addProduct()" class="btn btn-outline-success me-3" id="addBtn">add product</button>
+        <button onclick="update()" class="btn btn-outline-success me-3 d-none" id="updateBtn">update</button>
+        <button onclick="clearForm()" class="btn btn-outline-success  ">clear form</button>
+
+
+    </div>
+
+    <input type="text" onkeyup="search(this.value)" placeholder="search" class="w-50 m-auto form-control my-5" >
+
+    <table class="container table my-5">
+        <thead>
+            <th>Index</th>
+            <th>ProductName</th>
+            <th>ProductPrice</th>
+            <th>ProductCategory</th>
+            <th>ProductDesc</th>
+            <th>update</th>
+            <th>delete</th>
+        </thead>
+        <tbody id="tableBody"></tbody>
+
+    </table>
+    <script src="js/main.js"></script>
+</body>
+</html>
